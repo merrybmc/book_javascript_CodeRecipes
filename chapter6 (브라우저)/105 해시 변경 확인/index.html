@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="app">app</button>
+    <button class="index">index</button>
+    <p class="log"></p>
+</body>
+
+<script>
+    let app = document.querySelector(".app")
+    let index = document.querySelector(".index")
+    window.addEventListener("hashchange", (handleHashChange))
+    handleHashChange()
+
+    app.addEventListener("click", () => {
+        location.hash = "app"
+    })
+
+    index.addEventListener("click", () => {
+        location.hash = "index"
+    })
+
+    function handleHashChange() {
+        const hash = location.hash;
+        document.querySelector(".log").innerHTML = `현재 앵커는 ${hash} 입니다.`
+    }
+</script>
+
+</html>

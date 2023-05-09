@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    <textarea class="textarea" name="" id="" cols="30" rows="10"></textarea>
+    <p>현재 <span class="string_num">0</span>글자를 입력하셨습니다.</p>
+</body>
+
+<script async>
+    window.onload = function () {
+        let textarea = document.querySelector('.textarea')
+        let string_num = document.querySelector('.string_num')
+
+        textarea.addEventListener('keyup', onKeyUp)
+
+        function onKeyUp() {
+            const inputText = textarea.value;
+            string_num.innerText = inputText.length;
+        }
+    }
+</script>
+
+</html>

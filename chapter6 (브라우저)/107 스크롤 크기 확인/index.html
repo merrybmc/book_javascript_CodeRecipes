@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .fix {
+        position: fixed;
+        background-color: aqua;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="fix">
+        <p class="scX"></p>
+        <p class="scY"></p>
+        <button class="check">새로고침</button>
+    </div>
+    <div>
+        <p>......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+        </p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+
+    </div>
+</body>
+
+<script>
+    let scx = document.querySelector(".scX")
+    let scy = document.querySelector(".scY")
+    let check = document.querySelector(".check")
+
+    const x = window.scrollX
+    const y = window.scrollY
+    scx.innerHTML = `현재 스크롤 x는 ${x} 입니다.`
+    scy.innerHTML = `현재 스크롤 y는 ${y} 입니다.`
+
+    check.addEventListener("click", () => {
+        location.reload()
+    })
+
+</script>
+
+</html>

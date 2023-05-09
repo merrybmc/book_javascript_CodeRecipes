@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="search-word-wrapper"></div>
+    <label>유저 ID<input id="search-id-input" type="text"></label>
+    <p id="search-result"></p>
+</body>
+
+<script>
+    const userDataList = [
+        { id: 123, name: "곰" },
+        { id: 456, name: "사자" },
+        { id: 789, name: "여우" }
+    ]
+
+    const searchIdInput = document.querySelector("#search-id-input")
+    const searchResult = document.querySelector("#search-result")
+
+    searchIdInput.addEventListener("keyup", () => {
+        const searchId = Number(searchIdInput.value)
+
+        findUser(searchId);
+    })
+
+    function findUser(searchId) {
+        const targetData = userDataList.find((data) => data.id == searchId)
+
+        if (targetData == null) {
+            searchResult.innerText = "유저 검색 결과 없음"
+            return;
+        }
+        searchResult.innerHTML = targetData.name;
+    }
+
+</script>
+
+</html>

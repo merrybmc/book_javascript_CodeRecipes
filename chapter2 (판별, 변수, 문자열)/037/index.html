@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input class="name-input" type="text">
+    <p class="warning-message"></p>
+</body>
+
+<script>
+    const nameInput = document.querySelector(".name-input")
+    const warningMessage = document.querySelector(".warning-message")
+
+    nameInput.addEventListener("input", () => {
+        const inputStr = nameInput.value;
+        const normalStr = inputStr.toLowerCase();
+
+        if (normalStr.includes("test") === true) {
+            warningMessage.textContent = "test가 포함되어 있음";
+        }
+        else {
+            warningMessage.textContent = '';
+        }
+    })
+</script>
+
+</html>

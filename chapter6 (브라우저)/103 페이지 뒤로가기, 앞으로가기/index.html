@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="move">2페이지 이동</button>
+    <button class="back">뒤로 가기</button>
+    <button class="back2">뒤로 가기2</button>
+    <button class="front">앞으로 가기</button>
+
+    <p class="text"></p>
+</body>
+
+<script>
+    let move = document.querySelector(".move")
+    let back = document.querySelector(".back")
+    let back2 = document.querySelector(".back2")
+    let front = document.querySelector(".front")
+    let text = document.querySelector(".text")
+
+    move.addEventListener("click", () => {
+        location.href = "index2.html"
+    })
+
+    back.addEventListener("click", () => {
+        history.back()
+    })
+
+    back2.addEventListener("click", () => {
+        history.go(-1)
+    })
+
+    front.addEventListener("click", () => {
+        history.forward()
+    })
+
+    text.innerHTML = `현재 페이지는 ${location.href} 입니다.`
+</script>
+
+</html>

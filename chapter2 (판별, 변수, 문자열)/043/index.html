@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>트윗하고 싶은 내용을 입력해주세요 : </h1>
+    <textarea name="" id="tweetTextArea" cols="30" rows="10"></textarea>
+    <button id="tweetButton">트윗하기</button>
+</body>
+
+<script>
+    document.querySelector("#tweetButton").addEventListener("click", () => {
+        let tweetText = document.querySelector("#tweetTextArea").value
+        tweetText += "#JavaScript"
+
+        const encodedText = encodeURIComponent(tweetText)
+
+        const tweetURL = `https://twitter.com/intent/tweet?text=${encodedText}`
+
+        window.open(tweetURL)
+
+    })
+</script>
+
+</html>

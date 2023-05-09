@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    <header>
+        <label>지역명의 첫 번째 글자를 입력해주세요.
+            <input id="search-word-input" maxlength="1" type="text">
+        </label>
+    </header>
+    <div id="prefecture-list">
+        <button data-name="속초" data-phonetic="sokcho">속초</button>
+        <button data-name="부산" data-phonetic="busan">부산</button>
+        <button data-name="포항" data-phonetic="pohang">포항</button>
+        <button data-name="상주" data-phonetic="sangju">상주</button>
+        <button data-name="서울" data-phonetic="seoul">서울</button>
+        <button data-name="제주" data-phonetic="jeju">제주</button>
+    </div>
+</body>
+
+<script>
+    // 검색어
+    const searchWordText = document.querySelector("#search-word-input")
+    // 지역 리스트
+    const prefectureList = document.querySelectorAll("#prefecture-list button")
+
+    searchWordText.addEventListener("keyup", () => {
+        const searchWord = searchWordText.value;
+        // 지역 리스트 루프 처리
+        // element는 리스트의 각 요소
+        prefectureList.forEach((element) => {
+            // 검색어가 없으면 모든 요소 표시
+            if (!searchWord || searchWord === "") {
+                element.classList.remove('hide')
+                return
+            }
+            // 데이터 name 가져오기
+            const prefectureName = element.dataset.name;
+            // 데이터 영문명 가져오기
+            const phonetic = element.dataset.phonetic;
+
+            // 검색어의 첫글자가 데이터와 일치하는지 여부 확인
+            if (
+                searchWord.charAt(0) === prefectureName.charAt(0) ||
+                searchWord.charAt(0) === phonetic.charAt(0)
+            ) {
+                // 검색어의 첫번째 글자가 일치하면 hide 클래스 제거
+                element.classList.remove('hide')
+            } else {
+                // 일치하지 않으면 hide 클래스 추가
+                element.classList.add('hide')
+            }
+        })
+    })
+</script>
+
+</html>

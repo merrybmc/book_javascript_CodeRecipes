@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main id="main">
+
+    </main>
+</body>
+
+<script>
+    const today = new Date()
+    document.querySelector("#main").innerHTML = `<h1>오늘${today.getMonth() + 1} / ${today.getDate()}의 날씨</h1 >
+        <p>서울은 맑음</p>`
+    console.log(today.getMonth())
+    console.log(today.getDate())
+    console.log(today.getDay())
+    console.log(today.getFullYear())
+    console.log(today.getHours())
+    console.log(today.getMinutes())
+    console.log(today.getMilliseconds())
+</script>
+
+</html>

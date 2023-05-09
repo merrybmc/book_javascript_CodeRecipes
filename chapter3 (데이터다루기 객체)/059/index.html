@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="button-wrapper">
+        <button class="ascending">오름차순</button>
+        <button class="descending">내림차순</button>
+    </div>
+    <ul class="user_list"></ul>
+</body>
+
+<script>
+    const userDataList = [
+        { id: 1, name: "곰" },
+        { id: 2, name: "사자" },
+        { id: 3, name: "여우" },
+        { id: 4, name: "호랑이" },
+        { id: 5, name: "토끼" },
+    ];
+
+    function updateList() {
+        let listHtml = ""
+        for (const data of userDataList) {
+            listHtml += `<li>${data.id} : ${data.name} </li>`
+        }
+
+        document.querySelector(".user_list").innerHTML = listHtml
+    }
+
+    function sortByAscending() {
+        userDataList.sort((a, b) => { return a.id - b.id })
+        updateList()
+    }
+
+    function sortByDescending() {
+        userDataList.sort((a, b) => { return b.id - a.id })
+        updateList()
+    }
+
+    document.querySelector(".ascending").addEventListener("click", () => {
+        sortByAscending()
+    })
+
+    document.querySelector(".descending").addEventListener("click", () => {
+        sortByDescending()
+    })
+
+    sortByAscending()
+</script>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        background-color: black;
+    }
+
+    .clock {
+        /* margin-top: 300px;
+        margin-left: 700px; */
+        border-radius: 50%;
+        border: 3px solid white;
+        width: 400px;
+        height: 400px;
+        background: rgba(255, 255, 255, 0.1);
+        position: relative;
+    }
+
+    .lineHour {
+        margin-top: 65px;
+        margin-left: 200px;
+        width: 10px;
+        height: 150px;
+        background: white;
+        position: absolute;
+        top: calc(50%-150px);
+        left: calc(50%-5px);
+        transform-origin: bottom;
+    }
+
+    .lineMin {
+        margin-top: 15px;
+        margin-left: 203px;
+        width: 4px;
+        height: 200px;
+        background: #cccccc;
+        position: absolute;
+        top: calc(50%-200px);
+        left: calc(50%-1px);
+        transform-origin: bottom;
+    }
+
+    .lineSec {
+        margin-top: 2px;
+        margin-left: 203px;
+        width: 2px;
+        height: 200px;
+        background: #cccccc;
+        position: absolute;
+        top: calc(50%-200px);
+        left: calc(50%-1px);
+        transform-origin: bottom;
+    }
+</style>
+
+<body>
+    <div class="clock">
+        <div class="lineHour"></div>
+        <div class="lineMin"></div>
+        <div class="lineSec"></div>
+    </div>
+</body>
+
+<script>
+    setInterval(() => {
+        const now = new Date()
+
+        const h = now.getHours()
+        const m = now.getMinutes()
+        const s = now.getSeconds()
+
+        const degH = h * (360 / 12) + m * (360 / 12 / 60)
+        const degM = m * (360 / 60)
+        const degS = s * (360 / 60)
+
+        const elementH = document.querySelector(".lineHour")
+        const elementM = document.querySelector(".lineMin")
+        const elementS = document.querySelector(".lineSec")
+
+        elementH.style.transform = `rotate(${degH}deg)`
+        elementM.style.transform = `rotate(${degM}deg)`
+        elementS.style.transform = `rotate(${degS}deg)`
+    }, 50)
+</script>
+
+</html>

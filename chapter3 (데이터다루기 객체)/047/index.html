@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>유저 리스트</h1>
+    <div class="container"></div>
+</body>
+
+<script>
+    const userList = [
+        { id: 1, name: "곰", address: "서울" },
+        { id: 2, name: "여우", address: "대구" },
+        { id: 3, name: "사자", address: "부산" }]
+
+    const container = document.querySelector(".container")
+
+    userList.forEach((userData) => {
+        container.innerHTML += `
+        <div class="card">
+            <h2>${userData.name}</h2>
+            <p>지역 : ${userData.address}</p>
+        `
+    })
+
+</script>
+
+</html>

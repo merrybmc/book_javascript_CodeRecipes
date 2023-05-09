@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">Click</button>
+    <p class="text"></p>
+</body>
+
+<script>
+    const btn = document.querySelector(".btn")
+    let text = document.querySelector(".text")
+
+    btn.addEventListener("click", () => {
+        const getText = prompt("오늘의 날씨는 어떤가요?", "여기에 입력해주세요!")
+        console.log(getText)
+        const Text_Html = `오늘의 날씨는 ${getText} 라고 하네요!`
+        console.log(Text_Html)
+        text.innerHTML = Text_Html
+    })
+</script>
+
+</html>

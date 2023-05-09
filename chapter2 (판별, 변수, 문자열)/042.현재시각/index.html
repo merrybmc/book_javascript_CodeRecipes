@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span class="hour"></span>:
+    <span class="minute"></span>:
+    <span class="second"></span>
+</body>
+
+<script>
+    const hourElement = document.querySelector(".hour")
+    const minuteElement = document.querySelector(".minute")
+    const secondElement = document.querySelector(".second")
+
+    update()
+
+    function update() {
+        const currentTime = new Date()
+
+
+        const second = currentTime.getSeconds();
+        const minute = currentTime.getMinutes();
+        const hour = currentTime.getHours()
+        hourElement.innerText = addZeroPadding(hour)
+        minuteElement.innerText = addZeroPadding(minute)
+        secondElement.innerText = addZeroPadding(second)
+
+        requestAnimationFrame(update)
+    }
+
+    // @param num
+    // @returns { string }
+
+    function addZeroPadding(num) {
+        return String(num).padStart(2, "0")
+    }
+</script>
+
+</html>
